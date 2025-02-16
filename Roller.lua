@@ -80,7 +80,7 @@ windower.register_event('addon command',function (...)
 		if cmd[1] == "help" then
 			windower.add_to_chat(7,'To start or stop auto rolling type //roller roll')
 			windower.add_to_chat(7,'To set rolls use //roller roll# rollname')
-			windower.add_to_chat(7,'//Roller conservative on/off - set risky double ups')
+			windower.add_to_chat(7,'//Roller conservative on/off - disable risky double ups')
 			windower.add_to_chat(7,'//Roller randomdeal on/off - enable the use of Random Deal')
 			windower.add_to_chat(7,'//Roller wild11 on/off - set if it should ignore the danger to bust on 11')
 			windower.add_to_chat(7,'//Roller engaged on/off - only roll while engaged')
