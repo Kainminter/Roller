@@ -23,7 +23,6 @@
 --ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 --(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 --SOFTWARE, EVEN IFIF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 _addon.name = 'Roller'
 _addon.version = '1.8'
 _addon.author = 'Selindrile, thanks to: Balloon and Lorand - (Modified with additional options by Kainminter)'
@@ -424,7 +423,12 @@ windower.register_event('action', function(act)
 				elseif available_ja:contains(178) and abil_recasts[198] == 0 and not lastRollCrooked and rollNum < 9 and not settings.conservative then
 					midRoll = true
 					windower.send_command('wait 5;input /ja "Double-Up" <me>')
-				elseif (rollNum < 6 or lastRoll == 11) and not settings.safe_on_11 then
+
+				elseif rollNum < 6 then
+					midRoll = true
+					windower.send_command('wait 5;input /ja "Double-Up" <me>')
+				-- Only consider safe_on_11 for the case when the last roll was 11:
+				elseif lastRoll == 11 and not settings.safe_on_11 then
 					midRoll = true
 					windower.send_command('wait 5;input /ja "Double-Up" <me>')
 				else
