@@ -417,7 +417,7 @@ windower.register_event('action', function(act)
 				elseif available_ja:contains(177) and abil_recasts[197] == 0 and rollNum == (rollInfo[rollID][15] - 1) then
 					midRoll = true
 					windower.send_command('wait 1;input /ja "Snake Eye" <me>;wait 4;input /ja "Double-Up" <me>')
-				elseif available_ja:contains(177) and abil_recasts[197] == 0 and rollNum > 6 and rollNum == rollInfo[rollID][16] then
+				elseif available_ja:contains(177) and abil_recasts[197] == 0 and rollNum >= 6 and rollNum == rollInfo[rollID][16] then
 					midRoll = true
 					windower.send_command('wait 1;input /ja "Snake Eye" <me>;wait 4;input /ja "Double-Up" <me>')
 				elseif available_ja:contains(178) and abil_recasts[198] == 0 and not lastRollCrooked and rollNum < 9 and not settings.conservative then
